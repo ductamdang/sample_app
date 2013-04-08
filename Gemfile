@@ -1,12 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
-
+gem 'bootstrap-sass', '2.1'
+gem 'sqlite3', '1.3.5'
+gem 'bcrypt-ruby', '3.0.1'
+group :production do
+  gem 'pg', '0.12.2'
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'rspec-rails', '2.11.0'
+group :development, :test do
+  gem 'rspec-rails', '2.11.0'
+end
+
 
 
 # Gems used only for assets and not required
@@ -16,10 +23,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
    gem 'uglifier', '1.2.3'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
- 
+  
 end
 
 group :test do
@@ -27,6 +31,6 @@ group :test do
 end
 gem 'jquery-rails'
 
-group :production do
-  gem 'pg', '0.12.2'
+group :development do
+  gem 'annotate', '2.5.0'
 end
